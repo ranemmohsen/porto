@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raneem Mohsen | Pricing Plans</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="pricing.css?v=2">
+</head>
+
+<body>
+    <header class="pricing-topbar">
+        <a href="index.html#services" class="back-link"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+        <button class="theme-toggle" id="themeBtn" aria-label="Toggle theme"><i class="fas fa-sun"></i></button>
+    </header>
+
+    <main class="pricing-page">
+        <section class="pricing-hero">
+            <span class="pricing-badge"><i class="fas fa-briefcase"></i> Transparent Pricing</span>
+            <h1>Choose Your Plan</h1>
+            <p>No hidden fees. Every plan is scoped to deliver real value from a simple landing page to a full web application.</p>
+            <div class="pricing-note">
+                <i class="fas fa-info-circle"></i>
+                <span>All plans include clean code, responsive design, and post-launch support.</span>
+            </div>
+        </section>
+
+        <section class="pricing-grid">
+            <article class="price-card">
+                <span class="plan-type">Starter</span>
+                <h2>Basic</h2>
+                <p class="price">$ 5-20 <small>/project</small></p>
+                <p class="plan-desc">Perfect for simple static websites or personal landing pages.</p>
+                <ul>
+                    <li>Up to 3 Pages</li>
+                    <li>Responsive Design</li>
+                    <li>HTML/CSS/JavaScript</li>
+                    <li>Contact Form (basic)</li>
+                    <li>1 Revision Round</li>
+                </ul>
+                <a href="index.html#contact" class="btn-outline">Get Started</a>
+            </article>
+
+            <article class="price-card featured">
+                <span class="featured-tag">Popular</span>
+                <span class="plan-type">Balance</span>
+                <h2>Balance</h2>
+                <p class="price">$ 40-70 <small>/project</small></p>
+                <p class="plan-desc">Ideal for business websites with dynamic content and basic React.</p>
+                <ul>
+                    <li>Up to 5 Pages</li>
+                    <li>Everything in Basic</li>
+                    <li>React.js Components</li>
+                    <li>Basic API Integration</li>
+                    <li>2 Revision Rounds</li>
+                </ul>
+                <a href="index.html#contact" class="btn-outline">Get Started</a>
+            </article>
+
+            <article class="price-card">
+                <span class="plan-type">Professional</span>
+                <h2>PRO</h2>
+                <p class="price">$ 80-100 <small>/project</small></p>
+                <p class="plan-desc">Full-stack project with React, Node.js, and database integration.</p>
+                <ul>
+                    <li>Up to 8 Pages</li>
+                    <li>Everything in Balance</li>
+                    <li>Node.js Backend</li>
+                    <li>Database Integration</li>
+                    <li>RESTful API</li>
+                    <li>3 Revision Rounds</li>
+                </ul>
+                <a href="index.html#contact" class="btn-outline">Get Started</a>
+            </article>
+
+            <article class="price-card">
+                <span class="plan-type">Custom</span>
+                <h2>Let's Talk Flexible</h2>
+                <p class="price">Custom Quote</p>
+                <p class="plan-desc">Tailored solutions for advanced requirements and ongoing support.</p>
+                <ul>
+                    <li>Everything in PRO</li>
+                    <li>Custom Features</li>
+                    <li>Advanced Functionality</li>
+                    <li>Priority Support</li>
+                    <li>Ongoing Maintenance</li>
+                </ul>
+                <a href="index.html#contact" class="btn-primary">Contact Me</a>
+            </article>
+        </section>
+
+        <p class="pricing-footer-note"><i class="far fa-shield-alt"></i> All projects include clean code, documentation, and basic post-launch support.</p>
+    </main>
+
+    <script>
+        const themeBtn = document.getElementById('themeBtn');
+        themeBtn.addEventListener('click', () => {
+            document.body.classList.toggle('light-mode');
+            const icon = themeBtn.querySelector('i');
+            if (document.body.classList.contains('light-mode')) {
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+            } else {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            }
+        });
+    </script>
+</body>
+
+</html>
