@@ -474,10 +474,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const configuredSources = projectImageContainer.getAttribute('data-project-images');
         if (configuredSources) {
+            // When page lives inside a `cvvvv/` folder, prefix local filenames with `../`.
+            const shouldPrefixParent = window.location.pathname.includes('/cvvvv/');
             return configuredSources
                 .split(',')
                 .map((source) => source.trim())
-                .filter(Boolean);
+                .filter(Boolean)
+                .map(src => {
+                    // ignore absolute or remote URLs
+                    if (/^(https?:)?\/\//.test(src) || src.startsWith('/') || src.startsWith('..') || src.startsWith('./')) return src;
+                    return shouldPrefixParent ? `../${src}` : src;
+                });
         }
 
         const imageElements = projectImageContainer.querySelectorAll('.project-shot img');
@@ -598,17 +605,17 @@ document.addEventListener('DOMContentLoaded', () => {
         openProjectVideo.addEventListener('click', openVideoModal);
     }
 
-    // Keep the hero on the profile photo.
+    // Keep the hero on the profile photo. If an image is already present in the HTML, preserve its `src`.
     if (heroImageWrapper) {
-        const profileSrc = 'profile.jpg';
         const existingHeroImage = heroImageWrapper.querySelector('img');
         if (existingHeroImage) {
-            existingHeroImage.src = profileSrc;
             existingHeroImage.alt = 'Raneem Mohsen';
-            existingHeroImage.className = 'profile-img';
+            existingHeroImage.classList.add('profile-img');
         } else {
             const heroImg = document.createElement('img');
-            heroImg.src = profileSrc;
+            // default fallback; if this page is inside a `cvvvv/` folder we try the parent path
+            const fallback = window.location.pathname.includes('/cvvvv/') ? '../profile.jpg' : 'profile.jpg';
+            heroImg.src = fallback;
             heroImg.alt = 'Raneem Mohsen';
             heroImg.className = 'profile-img';
             heroImageWrapper.innerHTML = '';

@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raneem Mohsen | Full Stack Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../style.css?v=5">
+
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo">
+                <img src="../Screenshot 2026-03-13 201905 copy.png" alt="Ranem Logo" class="logo-img">
+            </a>
+
+            <nav class="nav-links">
+                <a href="#home" class="nav-link active" data-i18n="home-nav">Home</a>
+                <a href="#about" class="nav-link" data-i18n="about-nav">About</a>
+                <a href="#education" class="nav-link" data-i18n="education-nav">Education</a>
+                <a href="#skills" class="nav-link" data-i18n="skills-nav">Skills</a>
+                <a href="#experience" class="nav-link" data-i18n="experience-nav">Experience</a>
+                <a href="#services" class="nav-link" data-i18n="services-nav">Services</a>
+                <a href="#projects" class="nav-link" data-i18n="projects-nav">Projects</a>
+                <a href="#testimonials" class="nav-link" data-i18n="testimonials-nav">Testimonials</a>
+                <a href="#contact" class="nav-link" data-i18n="contact-nav">Contact</a>
+            </nav>
+
+            <div class="nav-actions">
+                <!-- Language Toggle -->
+                <button class="lang-toggle" id="langBtn" aria-label="تحويل اللغة"
+                    style="background: transparent; border: none; color: white; font-size: 1.2rem; cursor: pointer;">
+                    <i class="fas fa-globe"></i>
+                </button>
+                <!-- Theme Toggle -->
+                <button class="theme-toggle" id="themeBtn" aria-label="Toggle Dark/Light Mode"
+                    style="background: transparent; border: none; color: white; font-size: 1.2rem; cursor: pointer;">
+                    <i class="fas fa-sun"></i>
+                </button>
+                <a href="#contact" class="btn btn-primary contact-btn" data-i18n="contact-btn">Contact Me</a>
+                <!-- Remove the old mailto link in favor of the new contact section -->
+                <button class="mobile-menu-toggle" aria-label="Toggle Menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <span class="badge" data-i18n="welcome-badge">WELCOME TO MY WORLD</span>
+                    <h2 class="greeting" data-i18n="greeting">Hi, I'm</h2>
+                    <h1 class="name">Raneem Mohsen</h1>
+                    <h2 class="title text-gradient typing-animation">
+                        <span style="--i:1">F</span><span style="--i:2">u</span><span style="--i:3">l</span><span
+                            style="--i:4">l</span>&nbsp;
+                        <span style="--i:5">S</span><span style="--i:6">t</span><span style="--i:7">a</span><span
+                            style="--i:8">c</span><span style="--i:9">k</span>&nbsp;
+                        <span style="--i:10">D</span><span style="--i:11">e</span><span style="--i:12">v</span><span
+                            style="--i:13">e</span><span style="--i:14">l</span><span style="--i:15">o</span><span
+                            style="--i:16">p</span><span style="--i:17">e</span><span style="--i:18">r</span>
+                    </h2>
+
+                    <p class="summary" data-i18n="summary">I build scalable, high-performance web applications using React.js and Node.js.</p>
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn btn-primary" data-i18n="portfolio-btn">My Portfolio</a>
+                        <a href="../resume.pdf" class="btn btn-outline" data-i18n="cv-btn" download>Download CV <i
+                                class="fas fa-download"></i></a>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="https://github.com/raneemmohsen" target="_blank" rel="noopener noreferrer"
+                            aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/ranem-mohsen" target="_blank" rel="noopener noreferrer"
+                            aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div class="hero-image-container">
+                    <div class="image-wrapper glow-effect">
+                        <img src="../profile.jpg" alt="Raneem Mohsen" class="profile-img">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about">
+            <div class="section-header">
+                <h2 class="section-title" data-i18n="about-title">About Me</h2>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="about-container glass-card">
+                <div class="about-icon">
+                    <i class="fas fa-terminal text-accent"></i>
+                </div>
+                <div class="about-text">
+                    <h3 class="about-subtitle" data-i18n="about-subtitle">Driven by Passion & Performance</h3>
+                    <p data-i18n="about-text">
+                       I'm Ranem, a passionate Full-Stack Developer focused on building web applications using React.js and Node.js. I write clean, maintainable code and have hands-on experience creating REST APIs and designing databases for academic and personal projects.
+
+I improved frontend performance by over 25% in my projects through optimized state management and lazy loading techniques.
+                    </p>
+
+
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Education & Certifications Section -->
+        <section id="education" class="education-certifications">
+            <div class="section-header">
+                <h2 class="section-title" data-i18n="education-title"><i class="fas fa-book text-accent"></i> Education
+                </h2>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="education-grid">
+                <!-- Education Card -->
+                <div class="education-card glass-card">
+                    <div class="edu-logo">
+                        <img src="https://th.bing.com/th/id/OIP.V8U_D5mCbZ9PL3ggODqB0AAAAA?w=171&h=180&c=7&r=0&o=7&pid=1.7&rm=3"
+                            alt="University Logo" class="university-logo">
+                    </div>
+                    <div class="edu-content">
+                        <h3 class="edu-degree" data-i18n="degree-title">Bachelor's Degree in Computer Science</h3>
+                        <p class="edu-university" data-i18n="university">SADAT Academy for Management Sciences</p>
+                        <p class="edu-project" data-i18n="edu-project">Bachelor of Computer Science — Excellent Grade</p>
+                        <div class="edu-details">
+                            <span class="edu-detail"><i class="fas fa-calendar"></i> <span data-i18n="start-date">Sep
+                                    2020</span> — <span data-i18n="end-date">Jul 2024</span></span>
+                            <span class="edu-detail"><i class="fas fa-star text-accent"></i> GPA: <span
+                                    data-i18n="gpa">3.32/4</span></span>
+                            <span class="edu-detail"><i class="fas fa-map-marker-alt text-accent"></i> <span
+                                    data-i18n="location">Cairo, Egypt</span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Certifications Section -->
+            <div class="section-header" style="margin-top: 3rem;">
+                <h2 class="section-title" data-i18n="certifications-title"><i
+                        class="fas fa-certificate text-accent"></i> Certifications</h2>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="certifications-grid">
+                <!-- Certification 1: Front End - Route -->
+                <div class="certification-card glass-card">
+                    <div class="cert-card-header">
+                        <img src="https://th.bing.com/th/id/OIP.Iap5Mdgf2Q6TWUEdD_xB6gHaHa?w=178&h=180&c=7&r=0&o=7&pid=1.7&rm=3"
+                            alt="Route Academy" class="cert-provider-logo">
+                        <h3 class="cert-title" data-i18n="cert-title-1">Front End, Route</h3>
+                    </div>
+                    <div class="cert-meta">
+                        <p class="cert-provider" data-i18n="cert-provider-1">Route Academy</p>
+                        <p class="cert-date"><i class="fas fa-calendar-alt"></i> Mar 2025</p>
+                    </div>
+                    <p class="cert-description" data-i18n="cert-desc-1">Covered core frontend development topics including React, JavaScript,
+                        and modern HTML/CSS practices.</p>
+                    <a href="https://drive.google.com/uc?export=download&id=13dK2gWx83a4qRBCtYwLDPaKaLegpX_jR"
+                        target="_blank" rel="noopener noreferrer" class="btn btn-cert" data-i18n="view-cert">View
+                        Certificate <i class="fas fa-external-link-alt"></i></a>
+                </div>
+
+                <!-- Certification 2: CIB Bank -->
+                <div class="certification-card glass-card">
+                    <div class="cert-card-header">
+                        <img src="https://th.bing.com/th/id/OIP.UDxcP4bXKy5adsetCblangHaEH?w=324&h=180&c=7&r=0&o=7&pid=1.7&rm=3"
+                            alt="Route Academy" class="cert-provider-logo">
+                        <h3 class="cert-title" data-i18n="cert-title-2">CIB Bank</h3>
+                    </div>
+                    <div class="cert-meta">
+                        <p class="cert-provider" data-i18n="cert-provider-2">CIB Bank</p>
+                        <p class="cert-date"><i class="fas fa-calendar-alt"></i> Nov 2023</p>
+                    </div>
+                    <p class="cert-description" data-i18n="cert-desc-2">Focused on banking principles, compliance requirements, and practical
+                        financial service operations.</p>
+                    <a href="https://drive.google.com/uc?export=download&id=1t3YQ2RJEVor3qBg_6bNShPHfQhn2mLzm"
+                        target="_blank" rel="noopener noreferrer" class="btn btn-cert" data-i18n="view-cert">View
+                        Certificate <i class="fas fa-external-link-alt"></i></a>
+                </div>
+
+                <!-- Certification 3: CCNA - Telecom Egypt -->
+                <div class="certification-card glass-card">
+                    <div class="cert-card-header">
+                        <img src="https://th.bing.com/th/id/OIP.k3Wxf08dQYWlKmBgLfRE1wHaDt?w=343&h=175&c=7&r=0&o=7&pid=1.7&rm=3"
+                            alt="Telecom Egypt" class="cert-provider-logo">
+                        <h3 class="cert-title" data-i18n="cert-title-3">CCNA, Telecom Egypt</h3>
+                    </div>
+                    <div class="cert-meta">
+                        <p class="cert-provider" data-i18n="cert-provider-3">Telecom Egypt</p>
+                        <p class="cert-date"><i class="fas fa-calendar-alt"></i> Oct 2022</p>
+                    </div>
+                    <p class="cert-description" data-i18n="cert-desc-3">Built practical knowledge in networking fundamentals, routing, and
+                        essential network security concepts.</p>
+                    <a href="https://drive.google.com/uc?export=download&id=13q4QNbkBNiOabnH-JeV6mPPNrmgWbwru"
+                        target="_blank" rel="noopener noreferrer" class="btn btn-cert" data-i18n="view-cert">View
+                        Certificate <i class="fas fa-external-link-alt"></i></a>
+                </div>
+
+                <!-- Certification 4: Bank Misr -->
+                <div class="certification-card glass-card">
+                    <div class="cert-card-header">
+                        <img src="https://th.bing.com/th/id/OIP.hmcBzYrLN2DpKwrUcrmIoAHaCe?w=348&h=117&c=7&r=0&o=7&pid=1.7&rm=3"
+                            alt="Bank Misr" class="cert-provider-logo">
+                        <h3 class="cert-title" data-i18n="cert-title-4">Bank Misr</h3>
+                    </div>
+                    <div class="cert-meta">
+                        <p class="cert-provider" data-i18n="cert-provider-4">Bank Misr</p>
+                        <p class="cert-date"><i class="fas fa-calendar-alt"></i> Nov 2021</p>
+                    </div>
+                    <p class="cert-description" data-i18n="cert-desc-4">Introduced key banking services, financial products, and
+                        customer-focused service delivery.</p>
+                    <a href="https://drive.google.com/uc?export=download&id=13q1AVJtpaZJP1Op2QyrFnN51yffmuXXj"
+                        target="_blank" rel="noopener noreferrer" class="btn btn-cert" data-i18n="view-cert">View
+                        Certificate <i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills">
+            <div class="section-header">
+                <h2 class="section-title" data-i18n="skills-title">Technical Skills</h2>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="skills-grid">
+                <!-- Frontend Engineering -->
+                <div class="skill-card glass-card">
+                    <div class="skill-header">
+                        <i class="fas fa-paintbrush skill-main-icon"></i>
+                        <h3 data-i18n="frontend-title">Frontend Engineering</h3>
+                    </div>
+                    <p class="skill-description" data-i18n="frontend-desc">Designing and developing scalable, high-performance web applications
+                        with React.js, focusing on clean architecture, maintainable code, optimized rendering, and
+                        seamless user experience across devices.</p>
+                    <div class="skill-tags">
+                        <span class="skill-tag"><i class="fab fa-react"></i>React.js</span>
+                        <span class="skill-tag"><i class="fab fa-html5"></i>HTML5</span>
+                        <span class="skill-tag"><i class="fab fa-css3-alt"></i>CSS3</span>
+                        <span class="skill-tag"><i class="fab fa-bootstrap"></i>Bootstrap</span>
+                        <span class="skill-tag"><i class="fab fa-tailwind"></i>Tailwind</span>
+                        <span class="skill-tag"><i class="fab fa-js-square"></i>JavaScript</span>
+                    </div>
+                </div>
+
+                <!-- Backend Development -->
+                <div class="skill-card glass-card">
+                    <div class="skill-header">
+                        <i class="fas fa-sliders-h skill-main-icon"></i>
+                        <h3 data-i18n="backend-title">Backend Development</h3>
+                    </div>
+                    <p class="skill-description" data-i18n="backend-desc">Building secure and scalable backend services using Node.js and
+                        Express.js, implementing structured architecture patterns and efficient database integration to
+                        ensure reliability and performance.</p>
+                    <div class="skill-tags">
+                        <span class="skill-tag"><i class="fab fa-node-js"></i>Node.js</span>
+                        <span class="skill-tag"><i class="fas fa-bolt"></i>Express.js</span>
+                        <span class="skill-tag"><i class="fab fa-python"></i>Python</span>
+                        <span class="skill-tag"><i class="fas fa-glass-martini-alt"></i>Flask</span>
+                        <span class="skill-tag"><i class="fas fa-code-branch"></i>REST APIs</span>
+                    </div>
+                </div>
+
+                <!-- Database Systems -->
+                <div class="skill-card glass-card">
+                    <div class="skill-header">
+                        <i class="fas fa-th skill-main-icon"></i>
+                        <h3 data-i18n="database-title">Database Systems</h3>
+                    </div>
+                    <p class="skill-description" data-i18n="database-desc">Designing relational database schemas and writing optimized queries to
+                        maintain data integrity, performance efficiency, and scalable application behavior.</p>
+                    <div class="skill-tags">
+                        <span class="skill-tag"><i class="fas fa-database"></i>SQL Server</span>
+                        <span class="skill-tag"><i class="fab fa-mysql"></i>MySQL</span>
+                        <span class="skill-tag"><i class="fas fa-cube"></i>Oracle</span>
+                    </div>
+                </div>
+
+                <!-- Computer Science Foundation -->
+                <div class="skill-card glass-card">
+                    <div class="skill-header">
+                        <i class="fas fa-microchip skill-main-icon"></i>
+                        <h3 data-i18n="foundation-title">Computer Science Foundation</h3>
+                    </div>
+                    <p class="skill-description" data-i18n="foundation-desc">Applying core engineering fundamentals to architect structured,
+                        maintainable, and scalable software systems.</p>
+                    <div class="skill-tags">
+                        <span class="skill-tag"><i class="fas fa-cube"></i>Data Structures</span>
+                        <span class="skill-tag"><i class="fas fa-code-branch"></i>Algorithms</span>
+                        <span class="skill-tag"><i class="fas fa-cogs"></i>Software Engineering</span>
+                    </div>
+                </div>
+
+                <!-- Development Tools -->
+                <div class="skill-card glass-card">
+                    <div class="skill-header">
+                        <i class="fas fa-wrench skill-main-icon"></i>
+                        <h3 data-i18n="tools-title">Development Tools</h3>
+                    </div>
+                    <p class="skill-description" data-i18n="tools-desc">Managing version control, API testing, and structured development
+                        workflows to maintain clean, collaborative, and production-ready codebases.</p>
+                    <div class="skill-tags">
+                        <span class="skill-tag"><i class="fab fa-git-alt"></i>Git</span>
+                        <span class="skill-tag"><i class="fab fa-github"></i>GitHub</span>
+                        <span class="skill-tag"><i class="fab fa-windows"></i>VS Code</span>
+                        <span class="skill-tag"><i class="fas fa-paper-plane"></i>Postman</span>
+                    </div>
+                </div>
+
+                <!-- Soft Skills -->
+                <div class="skill-card glass-card">
+                    <div class="skill-header">
+                        <i class="fas fa-lightbulb skill-main-icon"></i>
+                        <h3 data-i18n="soft-title">Soft Skills</h3>
+                    </div>
+                    <p class="skill-description" data-i18n="soft-desc">Applying analytical thinking to break down complex problems, working
+                        effectively in teams, and adapting quickly to new technologies and changing requirements.</p>
+                    <div class="skill-tags">
+                        <span class="skill-tag"><i class="fas fa-lightbulb"></i>Problem Solving</span>
+                        <span class="skill-tag"><i class="fas fa-users"></i>Team Collaboration</span>
+                        <span class="skill-tag"><i class="fas fa-sync-alt"></i>Adaptability</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="experience">
+            <div class="section-header">
+                <h2 class="section-title">Experience & Organizations</h2>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="experience-timeline">
+                <div class="timeline-item glass-card">
+                    <div class="timeline-dot"></div>
+                    <div class="exp-header">
+                        <div class="exp-company-section">
+                            <img src="https://th.bing.com/th/id/OIP.GjX0_NhAl4BDQ-GG3qhGHgAAAA?w=281&h=147&c=7&r=0&o=7&pid=1.7&rm=3"
+                                onerror="this.onerror=null;this.src='https://th.bing.com/th/id/OIP.87N6leBurJDtmKIqrIogMgHaHa?w=167&h=180&c=7&r=0&o=7&pid=1.7&rm=3';"
+                                alt="CIB Bank" class="exp-company-logo">
+                            <div>
+                                <h3 class="exp-role">Intern</h3>
+                                <h4 class="exp-company">CIB Bank</h4>
+                            </div>
+                        </div>
+                        <span class="exp-date">Nov 2023 • Cairo, Egypt</span>
+                    </div>
+                    <ul class="exp-bullets">
+                        <li>Provided foundational knowledge in banking principles, practices, and regulations.</li>
+                        <li>Enhanced employability in the finance sector.</li>
+                        <li>Recognized by employers as a mark of professionalism.</li>
+                    </ul>
+                </div>
+
+                <!-- Bank Misr -->
+                <div class="timeline-item glass-card">
+                    <div class="timeline-dot"></div>
+                    <div class="exp-header">
+                        <div class="exp-company-section">
+                            <img src="https://th.bing.com/th/id/OIP.hmcBzYrLN2DpKwrUcrmIoAHaCe?w=348&h=117&c=7&r=0&o=7&pid=1.7&rm=3"
+                                alt="Bank Misr" class="exp-company-logo">
+                            <div>
+                                <h3 class="exp-role">Intern</h3>
+                                <h4 class="exp-company">Bank Misr</h4>
+                            </div>
+                        </div>
+                        <span class="exp-date">2021 — Nov 2021 • Cairo, Egypt</span>
+                    </div>
+                    <ul class="exp-bullets">
+                        <li>Offered a wide range of banking services, including personal banking (savings accounts,
+                            loans, and credit cards).</li>
+                        <li>Learned corporate banking services including financing and investment support.</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item glass-card">
+                    <div class="timeline-dot"></div>
+                    <div class="exp-header">
+                        <div class="exp-company-section">
+                            <img src="https://th.bing.com/th/id/OIP.aZxbbLULHh-udXleM9Q--wHaEK?w=301&h=184&c=7&r=0&o=7&pid=1.7&rm=3"
+                                alt="Resala" class="exp-company-logo">
+                            <div>
+                                <h3 class="exp-role">Community Service Volunteer</h3>
+                                <h4 class="exp-company">Resala Charity Organization</h4>
+                            </div>
+                        </div>
+                        <span class="exp-date">Jan 2025 — Dec 2025 • Cairo, Egypt</span>
+                    </div>
+                    <ul class="exp-bullets">
+                        <li>Coordinated large-scale charity events and distribution convoys, partnering with community
+                            groups to increase reach and ensure timely aid delivery.</li>
+                        <li>Recruited and mentored volunteers, improving team engagement and operational reliability.
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="services">
+            <div class="section-header services-header">
+                <span class="services-label" data-i18n="services-label">WHAT I OFFER</span>
+                <h2 class="section-title" data-i18n="services-title">My Services</h2>
+                <p class="services-subtitle" data-i18n="services-subtitle">Practical solutions with clean architecture, scalable code, and reliable
+                    delivery.</p>
+            </div>
+
+            <div class="services-grid">
+                <article class="service-card glass-card">
+                    <div class="service-icon"><i class="fas fa-database"></i></div>
+                    <h3 data-i18n="service-1-title">Database Design</h3>
+                    <p data-i18n="service-1-desc">Efficient schemas optimized for performance, security, and long-term scalability.</p>
+                    <div class="service-tags">
+                        <span data-i18n="service-1-tag-1">SQL Server</span>
+                        <span data-i18n="service-1-tag-2">Entity Framework</span>
+                        <span data-i18n="service-1-tag-3">T-SQL</span>
+                    </div>
+                </article>
+
+                <article class="service-card glass-card">
+                    <div class="service-icon"><i class="fas fa-plug"></i></div>
+                    <h3 data-i18n="service-2-title">API Development</h3>
+                    <p data-i18n="service-2-desc">Secure and documented RESTful APIs for web and mobile apps with clean integration.</p>
+                    <div class="service-tags">
+                        <span data-i18n="service-2-tag-1">Node.js</span>
+                        <span data-i18n="service-2-tag-2">JWT Auth</span>
+                        <span data-i18n="service-2-tag-3">Postman</span>
+                    </div>
+                </article>
+
+                <article class="service-card glass-card">
+                    <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
+                    <h3 data-i18n="service-3-title">Web Applications</h3>
+                    <p data-i18n="service-3-desc">Building full-featured web applications using React, Next.js, and modern backend patterns.</p>
+                    <div class="service-tags">
+                        <span data-i18n="service-3-tag-1">React.js</span>
+                        <span data-i18n="service-3-tag-2">Next.js</span>
+                        <span data-i18n="service-3-tag-3">Node.js</span>
+                        <span data-i18n="service-3-tag-4">Express.js</span>
+                    </div>
+                </article>
+            </div>
+
+            <div class="services-cta">
+                <a href="pricing.html" class="btn btn-primary services-btn">View Pricing Plans <i
+                        class="fas fa-arrow-right"></i></a>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects">
+            <div class="section-header">
+                <h2 class="section-title" data-i18n="projects-title">Featured Projects</h2>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="projects-grid">
+                <!-- Fitplan App -->
+                <div class="project-card glass-card">
+                    <div class="project-image fitplan-preview project-gallery" tabindex="0" aria-label="Open FitPlan project gallery" data-project-images="Screenshot%202026-03-13%20131443.png,Screenshot%202026-03-13%20131454.png,Screenshot%202026-03-13%20131515.png,Screenshot%202026-03-13%20131506.png">
+                        <button class="project-shot project-shot--main" type="button" aria-label="FitPlan dashboard screen">
+                            <img src="../Screenshot 2026-05-02 161321.png" alt="FitPlan dashboard screen" />
+                        </button>
+                        <div class="project-gallery-glow"></div>
+                    </div>
+                    <div class="project-content">
+                        <span class="project-category project-pill" data-i18n="project-pill">GRADUATION PROJECT</span>
+                        <h3 class="project-title" data-i18n="project-title">Fitplan App</h3>
+                        <p class="project-lead" data-i18n="project-lead">
+                            A mobile app designed to create personalized diet plans and guide users toward healthier
+                            routines with clear, simple navigation.
+                        </p>
+
+                        <div class="project-story">
+                            <div class="project-story-item">
+                                <p data-i18n="project-challenge">
+                                    Making health-focused flows feel calm, understandable, and easy to trust for users
+                                    managing different conditions.
+                                </p>
+                            </div>
+                            <div class="project-story-item">
+                                <span class="story-label story-label-action" data-i18n="project-action-label">Action</span>
+                                <p data-i18n="project-action">
+                                    Built the experience with Flutter, structured screens, and simple interactions for
+                                    plans, labs, and recommendations.
+                                </p>
+                            </div>
+                            <div class="project-story-item">
+                                <span class="story-label story-label-result" data-i18n="project-result-label">Result</span>
+                                <p data-i18n="project-result">
+                                    Delivered a clean graduation project with a smoother journey and a more confident
+                                    presentation of results.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="project-tech">
+                            <span data-i18n="project-tech-1">Flutter</span>
+                            <span data-i18n="project-tech-2">Dart</span>
+                            <span data-i18n="project-tech-3">SQLite</span>
+                        </div>
+
+                        <div class="project-actions">
+                            <button id="openProjectVideo" class="project-action-card project-action-card--video" type="button">
+                                <span class="action-icon"><i class="fas fa-play"></i></span>
+                                <span class="action-copy">
+                                    <strong data-i18n="project-video-title">Video</strong>
+                                    <small data-i18n="project-video-sub">Watch project demo</small>
+                                </span>
+                                <span class="action-arrow"><i class="fas fa-arrow-right"></i></span>
+                            </button>
+                            <button id="openProjectScreens" class="project-action-card project-action-card--screens" type="button">
+                                <span class="action-icon"><i class="fas fa-images"></i></span>
+                                <span class="action-copy">
+                                    <strong data-i18n="project-screens-title">Screens</strong>
+                                    <small data-i18n="project-screens-sub">Open project screenshots</small>
+                                </span>
+                                <span class="action-arrow"><i class="fas fa-arrow-right"></i></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Additional projects would go here -->
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="testimonials section">
+            <div class="section-header">
+                <h2 class="section-title" data-i18n="testimonials-title">Testimonials</h2>
+                <div class="section-line"></div>
+                <p class="section-subtitle" data-i18n="testimonials-subtitle">What clients and colleagues say about my work</p>
+            </div>
+
+            <div class="testimonials-grid">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card glass-card">
+                    <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                    <p class="testimonial-text" data-i18n="testimonial-1">"Raneem is an exceptional developer who truly understands user needs.
+                        Her work on our platform's backend significantly improved our performance and scalability."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar"><i class="fas fa-user-circle"></i></div>
+                        <div class="author-info">
+                            <h4 data-i18n="testimonial-1-name">Michael Chen</h4>
+                            <p data-i18n="testimonial-1-role">CEO, TechStream</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card glass-card">
+                    <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                    <p class="testimonial-text" data-i18n="testimonial-2">"Collaborating with Raneem on the Fitplan app was a joy. Her MERN stack
+                        expertise and attention to detail resulted in a flawless product our users love."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar"><i class="fas fa-user-circle"></i></div>
+                        <div class="author-info">
+                            <h4 data-i18n="testimonial-2-name">Sarah Johnson</h4>
+                            <p data-i18n="testimonial-2-role">Founder, FitLife</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card glass-card">
+                    <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                    <p class="testimonial-text" data-i18n="testimonial-3">"A proactive problem-solver and a skilled full-stack developer. Raneem's
+                        contributions to our codebase were invaluable. Highly recommended!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar"><i class="fas fa-user-circle"></i></div>
+                        <div class="author-info">
+                            <h4 data-i18n="testimonial-3-name">David Miller</h4>
+                            <p data-i18n="testimonial-3-role">CTO, InnovateSoft</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <div class="section-header">
+                <span class="contact-label" data-i18n="contact-label">GET IN TOUCH</span>
+                <h2 class="section-title" data-i18n="contact-title">Let's Talk</h2>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="contact-container glass-card">
+                <div class="contact-sidebar">
+                    <p data-i18n="contact-side-text">Have a project in mind or want to discuss the latest in tech? Feel free to reach out.</p>
+
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Cairo, Egypt</span>
+                        </div>
+                        <a href="mailto:ranemmohsen05@gmail.com" class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>ranemmohsen05@gmail.com</span>
+                        </a>
+                        <a href="tel:+201227782757" class="contact-item">
+                            <i class="fas fa-phone-alt"></i>
+                            <span>+20 122 778 2757</span>
+                        </a>
+                        <a href="https://wa.me/201227782757" target="_blank" rel="noopener noreferrer"
+                            class="contact-item">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>WhatsApp</span>
+                        </a>
+                    </div>
+
+
+                </div>
+
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="text" id="name" placeholder="Your Name" data-i18n-placeholder="contact-name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" id="email" placeholder="Email Address" data-i18n-placeholder="contact-email" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" rows="5" placeholder="Your Message" data-i18n-placeholder="contact-message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary submit-btn " data-i18n="contact-submit">Send Message <i
+                                class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4 data-i18n="footer-left-title">DON'T BE SHY !</h4>
+                <p data-i18n="footer-left-text">Feel free to get in touch with me. I am always open to discussing new projects, creative ideas, or
+                    opportunities to be part of your vision.</p>
+            </div>
+            <div class="footer-center">
+                <h3>R.M</h3>
+            </div>
+            <div class="footer-col">
+                <h4 data-i18n="footer-right-title">WHO AM I ?</h4>
+                <p data-i18n="footer-right-text">I'm a Full-Stack Developer and React.js enthusiast, focused on building scalable, user-friendly
+                    applications with clean code and reliable performance.</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p data-i18n="footer-bottom">&copy; 2026 <strong>Raneem Mohsen</strong>. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <a href="#home" class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+
+    <!-- Project Image Modal -->
+    <div id="projectModal" class="project-modal" aria-hidden="true">
+        <div class="project-modal-inner" role="dialog" aria-modal="true">
+            <button id="modalClose" class="modal-close" aria-label="Close modal" data-i18n-aria-label="project-modal-close">×</button>
+            <div class="modal-nav-wrap">
+                <button id="modalPrev" class="modal-nav modal-prev" aria-label="Previous" data-i18n-aria-label="project-modal-prev">‹</button>
+                <div id="modalScroll" class="modal-scroll" tabindex="0" role="list"></div>
+                <button id="modalNext" class="modal-nav modal-next" aria-label="Next" data-i18n-aria-label="project-modal-next">›</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Project Video Modal -->
+    <div id="projectVideoModal" class="project-modal" aria-hidden="true">
+        <div class="project-modal-inner" role="dialog" aria-modal="true">
+            <button id="videoModalClose" class="modal-close" aria-label="Close video modal" data-i18n-aria-label="project-video-close">×</button>
+            <div class="modal-instructions" data-i18n="project-video-instructions">Video demo preview</div>
+            <div class="project-video-frame">
+                <div class="video-placeholder">
+                    <div class="video-placeholder-icon"><i class="fas fa-play"></i></div>
+                    <h3 data-i18n="project-video-heading">Project Video</h3>
+                    <p data-i18n="project-video-body">
+                        Add your project demo video file or embed link here to show the app flow, main features,
+                        and real usage.
+                    </p>
+                    <div class="video-placeholder-note">
+                        <i class="fas fa-circle-info"></i>
+                        <span data-i18n="project-video-note">Current layout is ready for a video file whenever you add one.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../script.js"></script>
+</body>
+
+</html>
