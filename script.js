@@ -613,8 +613,7 @@ document.addEventListener('DOMContentLoaded', () => {
             existingHeroImage.classList.add('profile-img');
         } else {
             const heroImg = document.createElement('img');
-            // default fallback; if this page is inside a `cvvvv/` folder we try the parent path
-            const fallback = window.location.pathname.includes('/cvvvv/') ? '../profile.jpg' : 'profile.jpg';
+            const fallback = 'profile.jpg';
             heroImg.src = fallback;
             heroImg.alt = 'Raneem Mohsen';
             heroImg.className = 'profile-img';
