@@ -1,4 +1,15 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // --- Ambient pointer spotlight ---
+    const canUseFinePointer = window.matchMedia('(pointer: fine)').matches;
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (canUseFinePointer && !prefersReducedMotion) {
+        document.body.classList.add('has-pointer-glow');
+        window.addEventListener('pointermove', (event) => {
+            document.documentElement.style.setProperty('--pointer-x', `${event.clientX}px`);
+            document.documentElement.style.setProperty('--pointer-y', `${event.clientY}px`);
+        }, { passive: true });
+    }
+
     // --- Theme Toggle ---
     const themeBtn = document.getElementById('themeBtn');
     if (themeBtn) {
@@ -138,7 +149,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'greeting': 'Hi, I\'m',
             'summary': 'I build scalable, high-performance web applications using React.js and Node.js.',
             'portfolio-btn': 'My Portfolio',
-            'cv-btn': 'Download CV',
+            'cv-btn': 'View CV',
             'about-title': 'About Me',
             'about-subtitle': 'Driven by Passion & Performance',
             'about-text': 'I\'m Ranem, a passionate Full-Stack Developer focused on building web applications using React.js and Node.js. I write clean, maintainable code and have hands-on experience creating REST APIs and designing databases for academic and personal projects. I improved frontend performance by over 25% in my projects through optimized state management and lazy loading techniques.',
@@ -146,24 +157,31 @@ document.addEventListener('DOMContentLoaded', () => {
             'certifications-title': 'Certifications',
             'degree-title': 'Bachelor\'s Degree in Computer Science',
             'university': 'SADAT Academy for Management Sciences',
-            'edu-project': 'Bachelor of Computer Science — Excellent Grade',
+            'edu-project': 'Bachelor of Computer Science',
             'start-date': 'Sep 2020',
             'end-date': 'Jul 2024',
             'gpa': '3.32/4',
+            'graduation-project-grade': 'Graduation Project Grade: A',
             'location': 'Cairo, Egypt',
             'view-cert': 'View Certificate',
             'cert-title-1': 'Front End, Route',
             'cert-provider-1': 'Route Academy',
             'cert-desc-1': 'Covered core frontend development topics including React, JavaScript, and modern HTML/CSS practices.',
-            'cert-title-2': 'CIB Bank',
-            'cert-provider-2': 'CIB Bank',
+            'cert-title-2': 'CIB Bank (Online)',
+            'cert-provider-2': 'CIB Bank (Online)',
             'cert-desc-2': 'Focused on banking principles, compliance requirements, and practical financial service operations.',
             'cert-title-3': 'CCNA, Telecom Egypt',
             'cert-provider-3': 'Telecom Egypt',
             'cert-desc-3': 'Built practical knowledge in networking fundamentals, routing, and essential network security concepts.',
-            'cert-title-4': 'Bank Misr',
-            'cert-provider-4': 'Bank Misr',
+            'cert-title-4': 'Bank Misr (Online)',
+            'cert-provider-4': 'Bank Misr (Online)',
             'cert-desc-4': 'Introduced key banking services, financial products, and customer-focused service delivery.',
+            'cert-title-5': 'Military Academy',
+            'cert-provider-5': 'Military Academy',
+            'cert-desc-5': 'Full Stack Developer Intern (MERN) contribution to Military Academy platform workflows.',
+            'cert-title-6': 'Software Fundamentals',
+            'cert-provider-6': 'Route Academy',
+            'cert-desc-6': 'Covered C++, algorithms and data structures introduction, and Java fundamentals.',
             'skills-title': 'Technical Skills',
             'frontend-title': 'Frontend Engineering',
             'frontend-desc': 'Designing and developing scalable, high-performance web applications with React.js, focusing on clean architecture, maintainable code, optimized rendering, and seamless user experience across devices.',
@@ -206,20 +224,36 @@ document.addEventListener('DOMContentLoaded', () => {
             'project-action': 'Built the experience with Flutter, structured screens, and simple interactions for plans, labs, and recommendations.',
             'project-result-label': 'Result',
             'project-result': 'Delivered a clean graduation project with a smoother journey and a more confident presentation of results.',
-            'project-video-title': 'Video',
+            'project-2-pill': 'INTERNSHIP PROJECT',
+            'project-2-title': 'Military Academy Platform',
+            'project-2-lead': 'Full Stack Developer Intern (MERN) at Digilians (Jan 2026 - Jun 2026), contributing to web application features for Military Academy workflows.',
+            'project-2-challenge': 'The main challenge was handling and organizing large student data efficiently while keeping the experience fast and easy to navigate.',
+            'project-2-action': 'Worked across frontend and backend using React, Node.js, and Express; built and consumed REST APIs, and contributed to database design and integration with MongoDB and Mongoose.',
+            'project-2-result': 'Improved feature delivery through team collaboration, Git/GitHub workflows, and code reviews, resulting in a more maintainable full-stack product.',
+            'project-2-tech-1': 'React.js',
+            'project-2-tech-2': 'Node.js',
+            'project-2-tech-3': 'MongoDB',
+            'project-2-tech-4': 'Express.js',
+            'project-2-tech-5': 'Mongoose',
+            'project-video-title': 'Open video',
             'project-video-sub': 'Watch project demo',
             'project-screens-title': 'Screens',
             'project-screens-sub': 'Open project screenshots',
+            'project-details-toggle-text': 'Project details',
+            'project-details-toggle': 'Toggle project details',
+            'project-github-title': 'GitHub',
+            'project-github-sub': 'Open repository',
             'project-modal-close': 'Close modal',
             'project-modal-next': 'Next',
             'project-modal-prev': 'Previous',
             'project-video-close': 'Close video modal',
-            'project-video-instructions': 'Video demo preview',
+            'project-video-instructions': '',
             'project-video-heading': 'Project Video',
-            'project-video-body': 'Add your project demo video file or embed link here to show the app flow, main features, and real usage.',
-            'project-video-note': 'Current layout is ready for a video file whenever you add one.',
-            'testimonials-title': 'Testimonials',
-            'testimonials-subtitle': 'What clients and colleagues say about my work',
+            'project-video-body': 'Click the video card to open the demo inside this page.',
+            'project-video-note': 'The demo link is ready to open anytime.',
+            'testimonials-title': 'Reviews',
+            'testimonials-subtitle': 'Coming soon',
+            'testimonials-coming-soon': 'Reviews are coming soon.',
             'testimonial-1': '"Raneem is an exceptional developer who truly understands user needs. Her work on our platform\'s backend significantly improved our performance and scalability."',
             'testimonial-2': '"Collaborating with Raneem on the Fitplan app was a joy. Her MERN stack expertise and attention to detail resulted in a flawless product our users love."',
             'testimonial-3': '"A proactive problem-solver and a skilled full-stack developer. Raneem\'s contributions to our codebase were invaluable. Highly recommended!"',
@@ -251,7 +285,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'greeting': 'مرحباً، أنا',
             'summary': 'أبني تطبيقات ويب عالية الأداء وقابلة للتوسع باستخدام React.js و Node.js.',
             'portfolio-btn': 'محفظتي',
-            'cv-btn': 'تحميل السيرة الذاتية',
+            'cv-btn': 'عرض السيرة الذاتية',
             'about-title': 'معلومات عني',
             'about-subtitle': 'مدفوعة بالشغف والأداء',
             'about-text': 'أنا رانيم، مطورة Full-Stack شغوفة، أركز على بناء تطبيقات الويب باستخدام React.js و Node.js. أكتب كوداً نظيفاً وسهل الصيانة، ولدي خبرة عملية في إنشاء REST APIs وتصميم قواعد البيانات للمشاريع الأكاديمية والشخصية. حسّنت أداء الواجهة الأمامية بأكثر من 25% في مشاريعي من خلال تحسين إدارة الحالة وتقنيات التحميل الكسول.',
@@ -259,24 +293,31 @@ document.addEventListener('DOMContentLoaded', () => {
             'certifications-title': 'الشهادات',
             'degree-title': 'بكالوريوس في علوم الحاسب',
             'university': 'أكاديمية السادات لعلوم الإدارة',
-            'edu-project': 'بكالوريوس في علوم الحاسب — تقدير ممتاز',
+            'edu-project': 'بكالوريوس في علوم الحاسب',
             'start-date': 'سبتمبر 2020',
             'end-date': 'يوليو 2024',
             'gpa': '3.32/4',
+            'graduation-project-grade': 'تقدير مشروع التخرج: A',
             'location': 'القاهرة، مصر',
             'view-cert': 'عرض الشهادة',
             'cert-title-1': 'الواجهة الأمامية، رووت',
             'cert-provider-1': 'أكاديمية Route',
             'cert-desc-1': 'غطّى أساسيات تطوير الواجهة الأمامية بما يشمل React و JavaScript وممارسات HTML/CSS الحديثة.',
-            'cert-title-2': 'CIB بنك',
-            'cert-provider-2': 'CIB بنك',
+            'cert-title-2': 'CIB بنك (Online)',
+            'cert-provider-2': 'CIB بنك (Online)',
             'cert-desc-2': 'ركز على مبادئ العمل المصرفي ومتطلبات الالتزام والعمليات المصرفية العملية.',
             'cert-title-3': 'CCNA، Telecom Egypt',
             'cert-provider-3': 'Telecom Egypt',
             'cert-desc-3': 'بنى معرفة عملية في أساسيات الشبكات والتوجيه ومفاهيم أمان الشبكات الأساسية.',
-            'cert-title-4': 'بنك مصر',
-            'cert-provider-4': 'بنك مصر',
+            'cert-title-4': 'بنك مصر (Online)',
+            'cert-provider-4': 'بنك مصر (Online)',
             'cert-desc-4': 'عرّف بالخدمات المصرفية الأساسية والمنتجات المالية وتقديم خدمة يركز على العميل.',
+            'cert-title-5': 'Military Academy',
+            'cert-provider-5': 'Military Academy',
+            'cert-desc-5': 'مساهمة تدريب Full Stack Developer (MERN) في تطوير مسارات عمل منصة Military Academy.',
+            'cert-title-6': 'Software Fundamentals',
+            'cert-provider-6': 'أكاديمية Route',
+            'cert-desc-6': 'غطت أساسيات C++ ومقدمة في الخوارزميات وهياكل البيانات وأساسيات Java.',
             'skills-title': 'المهارات التقنية',
             'frontend-title': 'هندسة الواجهة الأمامية',
             'frontend-desc': 'تصميم وتطوير تطبيقات ويب قابلة للتوسع وعالية الأداء باستخدام React.js مع التركيز على هيكلة نظيفة وكود قابل للصيانة وتحسين العرض وتجربة مستخدم سلسة عبر الأجهزة.',
@@ -295,13 +336,13 @@ document.addEventListener('DOMContentLoaded', () => {
             'services-title': 'خدماتي',
             'services-subtitle': 'حلول عملية بهيكلية نظيفة وكود قابل للتوسع وتسليم موثوق.',
                'experience-role-1': 'متدربة',
-               'experience-company-1': 'بنك CIB',
+               'experience-company-1': 'بنك CIB (Online)',
                'experience-date-1': 'نوفمبر 2023 • القاهرة، مصر',
                'experience-bullet-1-1': 'اكتسبت معرفة أساسية بمبادئ المصرفية والممارسات واللوائح.',
                'experience-bullet-1-2': 'عززت فرص التوظيف في قطاع التمويل.',
                'experience-bullet-1-3': 'تم الاعتراف بها من أصحاب العمل كعلامة على الاحترافية.',
                'experience-role-2': 'متدربة',
-               'experience-company-2': 'بنك مصر',
+               'experience-company-2': 'بنك مصر (Online)',
                'experience-date-2': '2021 — نوفمبر 2021 • القاهرة، مصر',
                'experience-bullet-2-1': 'قدمت مجموعة واسعة من الخدمات المصرفية بما في ذلك الحسابات الشخصية والقروض وبطاقات الائتمان.',
                'experience-bullet-2-2': 'تعلّمت خدمات المصرفية للشركات بما في ذلك التمويل والدعم الاستثماري.',
@@ -335,20 +376,36 @@ document.addEventListener('DOMContentLoaded', () => {
             'project-action': 'تم بناء التجربة باستخدام Flutter مع شاشات منظمة وتفاعلات بسيطة للخطط والتحاليل والتوصيات.',
             'project-result-label': 'النتيجة',
             'project-result': 'تم تسليم مشروع تخرج نظيف مع رحلة استخدام أسلس وعرض أكثر ثقة للنتائج.',
-            'project-video-title': 'فيديو',
+            'project-2-pill': 'مشروع تدريب',
+            'project-2-title': 'منصة الأكاديمية العسكرية',
+            'project-2-lead': 'متدربة Full Stack Developer (MERN) في Digilians خلال الفترة من يناير 2026 إلى يونيو 2026، مع المساهمة في تطوير خصائص منصة الأكاديمية العسكرية.',
+            'project-2-challenge': 'أكبر تحدي كان التعامل مع حجم كبير من بيانات الطلاب وتنظيمها بكفاءة مع الحفاظ على سرعة الأداء وسهولة التصفح.',
+            'project-2-action': 'العمل على الواجهة والخلفية باستخدام React وNode.js وExpress، وبناء واستهلاك REST APIs، مع تصميم وربط قاعدة البيانات باستخدام MongoDB وMongoose.',
+            'project-2-result': 'تحسين جودة التسليم من خلال التعاون داخل الفريق واعتماد Git/GitHub وعمليات Code Review، مما نتج عنه منتج Full-Stack أكثر تنظيمًا وقابلية للصيانة.',
+            'project-2-tech-1': 'React.js',
+            'project-2-tech-2': 'Node.js',
+            'project-2-tech-3': 'MongoDB',
+            'project-2-tech-4': 'Express.js',
+            'project-2-tech-5': 'Mongoose',
+            'project-video-title': 'افتح الفيديو',
             'project-video-sub': 'شاهد عرض المشروع',
             'project-screens-title': 'الصور',
             'project-screens-sub': 'افتح لقطات المشروع',
+            'project-details-toggle-text': 'تفاصيل المشروع',
+            'project-details-toggle': 'إظهار أو إخفاء تفاصيل المشروع',
+            'project-github-title': 'جيت هاب',
+            'project-github-sub': 'افتح المستودع',
             'project-modal-close': 'إغلاق النافذة',
             'project-modal-next': 'التالي',
             'project-modal-prev': 'السابق',
             'project-video-close': 'إغلاق نافذة الفيديو',
-            'project-video-instructions': 'معاينة عرض الفيديو',
+            'project-video-instructions': '',
             'project-video-heading': 'فيديو المشروع',
-            'project-video-body': 'أضف ملف فيديو عرض المشروع أو رابط التضمين هنا لإظهار تدفق التطبيق والميزات الرئيسية والاستخدام الحقيقي.',
-            'project-video-note': 'التصميم الحالي جاهز لإضافة فيديو في أي وقت.',
-            'testimonials-title': 'التقييمات',
-            'testimonials-subtitle': 'ما يقوله العملاء وزملاء العمل عن أدائي',
+            'project-video-body': 'اضغط على بطاقة الفيديو لفتح العرض التوضيحي داخل نفس الصفحة.',
+            'project-video-note': 'الرابط جاهز للفتح في أي وقت.',
+            'testimonials-title': 'الريفيوز',
+            'testimonials-subtitle': 'قريبًا',
+            'testimonials-coming-soon': 'الريفيوز هتنزل قريبًا.',
             'testimonial-1': '"رانيم مطورة مميزة تفهم احتياجات المستخدمين حقاً. وقد أدى عملها على الواجهة الخلفية لمنصتنا إلى تحسين الأداء وقابلية التوسع بشكل كبير."',
             'testimonial-2': '"كان التعاون مع رانيم في تطبيق Fitplan ممتعاً. خبرتها في MERN stack واهتمامها بالتفاصيل أفرزا منتجاً مثالياً أحبه المستخدمون."',
             'testimonial-3': '"شخصية مبادرة في حل المشكلات ومطورة Full-Stack متمكنة. كانت مساهمات رانيم في قاعدة الكود لا تقدر بثمن. أوصي بها بشدة!"',
@@ -458,13 +515,17 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Project modal / image viewer ---
     const projectModal = document.getElementById('projectModal');
     const projectVideoModal = document.getElementById('projectVideoModal');
+    const projectVideoFrame = document.querySelector('#projectVideoModal .project-video-frame');
     const modalScroll = document.getElementById('modalScroll');
     const modalClose = document.getElementById('modalClose');
     const videoModalClose = document.getElementById('videoModalClose');
     const modalPrev = document.getElementById('modalPrev');
     const modalNext = document.getElementById('modalNext');
-    const openProjectVideo = document.getElementById('openProjectVideo');
-    const openProjectScreens = document.getElementById('openProjectScreens');
+    const openProjectVideoButtons = document.querySelectorAll('.open-project-video[data-video-url]');
+    const openProjectScreensButtons = document.querySelectorAll('.open-project-screens');
+    const projectDetailsToggleButtons = document.querySelectorAll('.project-details-toggle');
+    const certificateLinks = document.querySelectorAll('.btn-cert[href]');
+    const cvPreviewLinks = document.querySelectorAll('.open-cv-preview[href]');
     const heroImageWrapper = document.querySelector('.hero-image-container .image-wrapper');
     let currentProjectContainer = null;
     let currentIndex = 0;
@@ -524,16 +585,113 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function closeVideoModal() {
         if (!projectVideoModal) return;
+        const embeddedFrame = projectVideoFrame ? projectVideoFrame.querySelector('.project-embed') : null;
+        if (embeddedFrame) embeddedFrame.src = 'about:blank';
+        if (projectVideoFrame) projectVideoFrame.classList.remove('project-video-frame--pdf');
+        projectVideoModal.classList.remove('project-modal--embed');
         projectVideoModal.classList.remove('open');
         projectVideoModal.setAttribute('aria-hidden', 'true');
         document.body.style.overflow = '';
     }
 
-    function openVideoModal() {
-        if (!projectVideoModal) return;
+    function getEmbeddableUrl(url) {
+        try {
+            const parsedUrl = new URL(url, window.location.origin);
+
+            if (parsedUrl.hostname.includes('drive.google.com')) {
+                const fileId = getGoogleDriveFileId(parsedUrl);
+
+                if (fileId) {
+                    return `https://drive.google.com/file/d/${fileId}/preview`;
+                }
+            }
+
+            return parsedUrl.toString();
+        } catch (error) {
+            return url;
+        }
+    }
+
+    function getGoogleDriveFileId(url) {
+        const parsedUrl = typeof url === 'string' ? new URL(url, window.location.origin) : url;
+        const queryId = parsedUrl.searchParams.get('id');
+        const fileMatch = parsedUrl.pathname.match(/\/file\/d\/([^/]+)/);
+        return fileMatch ? fileMatch[1] : queryId;
+    }
+
+    function getDownloadUrl(url) {
+        try {
+            const parsedUrl = new URL(url, window.location.origin);
+
+            if (parsedUrl.hostname.includes('drive.google.com')) {
+                const fileId = getGoogleDriveFileId(parsedUrl);
+                if (fileId) return `https://drive.google.com/uc?export=download&id=${fileId}`;
+            }
+
+            return parsedUrl.toString();
+        } catch (error) {
+            return url;
+        }
+    }
+
+    function openEmbeddedLink(url) {
+        if (!projectVideoModal || !projectVideoFrame) {
+            window.location.href = url;
+            return;
+        }
+
+        const embedUrl = getEmbeddableUrl(url);
+        const isPdf = /\.pdf(?:[#?].*)?$/i.test(embedUrl);
+        projectVideoFrame.innerHTML = '';
+        projectVideoFrame.classList.toggle('project-video-frame--pdf', isPdf);
+
+        if (isPdf) {
+            const pdfToolbar = document.createElement('div');
+            pdfToolbar.className = 'pdf-preview-toolbar';
+
+            const pdfLabel = document.createElement('span');
+            pdfLabel.textContent = 'CV preview';
+
+            const pdfOpenLink = document.createElement('a');
+            pdfOpenLink.href = embedUrl;
+            pdfOpenLink.target = '_blank';
+            pdfOpenLink.rel = 'noopener';
+            pdfOpenLink.textContent = 'Open PDF';
+
+            const pdfDownloadLink = document.createElement('a');
+            pdfDownloadLink.href = getDownloadUrl(url);
+            pdfDownloadLink.className = 'pdf-download-link';
+            pdfDownloadLink.setAttribute('download', '');
+            pdfDownloadLink.setAttribute('aria-label', 'Download CV');
+            pdfDownloadLink.innerHTML = '<i class="fas fa-download" aria-hidden="true"></i><span>Download</span>';
+
+            pdfToolbar.appendChild(pdfLabel);
+            const pdfActions = document.createElement('div');
+            pdfActions.className = 'pdf-preview-actions';
+            pdfActions.appendChild(pdfOpenLink);
+            pdfActions.appendChild(pdfDownloadLink);
+            pdfToolbar.appendChild(pdfActions);
+            projectVideoFrame.appendChild(pdfToolbar);
+        }
+
+        const embeddedFrame = document.createElement('iframe');
+        embeddedFrame.className = 'project-embed';
+        embeddedFrame.src = isPdf ? `${embedUrl}#toolbar=1&navpanes=0` : embedUrl;
+        embeddedFrame.title = 'Embedded content preview';
+        embeddedFrame.loading = 'lazy';
+        embeddedFrame.allow = 'autoplay; fullscreen';
+        embeddedFrame.referrerPolicy = 'strict-origin-when-cross-origin';
+
+        projectVideoFrame.appendChild(embeddedFrame);
+        projectVideoModal.classList.add('project-modal--embed');
         projectVideoModal.classList.add('open');
         projectVideoModal.setAttribute('aria-hidden', 'false');
         document.body.style.overflow = 'hidden';
+    }
+
+    function openVideoModal(videoUrl) {
+        if (!videoUrl) return;
+        openEmbeddedLink(videoUrl);
     }
 
     function showIndex(i) {
@@ -594,16 +752,45 @@ document.addEventListener('DOMContentLoaded', () => {
         container.addEventListener('click', () => openProjectModal(container));
     });
 
-    if (openProjectScreens) {
-        openProjectScreens.addEventListener('click', () => {
-            const firstProject = document.querySelector('.project-image');
-            if (firstProject) openProjectModal(firstProject, 0);
+    openProjectScreensButtons.forEach((screensButton) => {
+        screensButton.addEventListener('click', () => {
+            const projectCard = screensButton.closest('.project-card');
+            const projectContainer = projectCard ? projectCard.querySelector('.project-image') : null;
+            if (projectContainer) openProjectModal(projectContainer, 0);
         });
-    }
+    });
 
-    if (openProjectVideo) {
-        openProjectVideo.addEventListener('click', openVideoModal);
-    }
+    openProjectVideoButtons.forEach((videoButton) => {
+        videoButton.addEventListener('click', () => {
+            openVideoModal(videoButton.getAttribute('data-video-url'));
+        });
+    });
+
+    projectDetailsToggleButtons.forEach((toggleButton) => {
+        toggleButton.addEventListener('click', () => {
+            const projectCard = toggleButton.closest('.project-card');
+            if (!projectCard) return;
+
+            const willOpen = !projectCard.classList.contains('details-open');
+            projectCard.classList.toggle('details-open', willOpen);
+            toggleButton.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+        });
+    });
+
+    certificateLinks.forEach((certificateLink) => {
+        certificateLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            if (!certificateLink.getAttribute('href')) return;
+            openEmbeddedLink(certificateLink.href);
+        });
+    });
+
+    cvPreviewLinks.forEach((cvPreviewLink) => {
+        cvPreviewLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            openEmbeddedLink(cvPreviewLink.getAttribute('data-preview-url') || cvPreviewLink.href);
+        });
+    });
 
     // Keep the hero on the profile photo. If an image is already present in the HTML, preserve its `src`.
     if (heroImageWrapper) {
